@@ -8,6 +8,7 @@ export const createMovieSchema = z.object({
 });
 
 export const movieSchema = createMovieSchema.extend({
+  id: z.number(),
   description: z.string(),
 });
 
