@@ -1,3 +1,3 @@
-import { iMovieCreate, iMovieRepo, iMovieUpdate } from "./movies.interface";
+import { iMovieCreate, iMovieRepo, iMovieUpdate, iMovie, iMoviePage } from "./movies.interface";
 
-export { iMovieCreate, iMovieUpdate, iMovieRepo };
+export { iMovieCreate, iMovieUpdate, iMovieRepo, iMovie, iMoviePage };
