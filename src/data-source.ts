@@ -10,12 +10,6 @@ const dataSourceConfig = (): DataSourceOptions => {
     "./migrations/**.{ts,js}"
   );
 
-  const databaseUrl: string | undefined = process.env.DATABASE_URL;
-
-  if (!databaseUrl) {
-    throw new Error("Env var DATABASE_URL does not exists");
-  }
-
   const nodeEnv: string | undefined = process.env.NODE_ENV;
 
   if (nodeEnv === "test") {
@@ -25,6 +19,12 @@ const dataSourceConfig = (): DataSourceOptions => {
       synchronize: true,
       entities: [entitiesPath],
     };
+  }
+
+  const databaseUrl: string | undefined = process.env.DATABASE_URL;
+
+  if (!databaseUrl) {
+    throw new Error("Env var DATABASE_URL does not exists");
   }
 
   return {
