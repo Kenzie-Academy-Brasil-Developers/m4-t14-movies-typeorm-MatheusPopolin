@@ -60,7 +60,6 @@ export const listMoviesService = async (queries: any): Promise<iMoviePage> => {
       ? `http://localhost:3000/movies?page=${page - 1}&perPage=${perPage}`
       : null;
 
-  console.log(lastPage);
   const nextPage =
     page < lastPage
       ? `http://localhost:3000/movies?page=${page + 1}&perPage=${perPage}`
